@@ -7,16 +7,6 @@ import numpy as np
 from pyspark import SparkConf, SparkContext
 
 
-def graph_plot(plt_obj, show=False):
-  plt_obj.ylim(0, 1)
-  plt_obj.xlabel("Number of trials")
-  plt_obj.ylabel("Accuracy")
-  plt_obj.legend(["PA"], loc="lower right")
-  if show is True:
-    plt_obj.show()
-  else:
-    plt_obj.figure()
-
 def parseRating(line):
   fields = line.strip().split("::")
   return long(fields[3]) % 10, (int(fields[0]), int(fields[1]), float(fields[2]))
